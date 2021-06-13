@@ -1,7 +1,7 @@
 {
   "name": "posts",
   "version": "1.0.0",
-  "description": "post microservice",
+  "description": "post service",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
