@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { randomBytes } = require("crypto");
+const axios = require("axios");
 
 const cors = require("cors");
 
@@ -22,7 +23,27 @@ app.post("/posts", (req, res) => {
     title,
   };
   console.log(posts[id]);
+
+  axios({
+    url: "http://localhost:4005/events",
+    method: "post",
+    data: {
+      type: "postCreated",
+      data: {
+        id,
+        title,
+      },
+    },
+  })
+    .then((res) => {})
+    .catch((err) => console.error(err));
+
   res.status(201).send(posts[id]);
+});
+
+app.post("/events", (req, res) => {
+  console.log("Event Received", req.body.event.type);
+  res.send({});
 });
 
 app.listen(4000, () => {
