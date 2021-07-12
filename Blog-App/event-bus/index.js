@@ -11,45 +11,13 @@ app.use(
 );
 
 app.post("/events", (req, res) => {
-  console.log(req.body);
+  const { type } = req.body;
+  console.log(type);
   const event = req.body;
-  console.log(event);
 
-  axios({
-    url: "http://localhost:4000/events",
-    method: "post",
-    data: {
-      event,
-    },
-  })
-    .then((response) => {})
-    .catch((error) => {
-      console.log("There was  an issue");
-    });
-
-  axios({
-    url: "http://localhost:4001/events",
-    method: "post",
-    data: {
-      event,
-    },
-  })
-    .then((response) => {})
-    .catch((error) => {
-      console.log("There was  an issue");
-    });
-
-  axios({
-    url: "http://localhost:4001/events",
-    method: "post",
-    data: {
-      event,
-    },
-  })
-    .then((response) => {})
-    .catch((error) => {
-      console.log("There was  an issue");
-    });
+  axios.post("http://localhost:4000/events", event);
+  axios.post("http://localhost:4001/events", event);
+  axios.post("http://localhost:4002/events", event);
 
   res.send({ status: "OK" });
 });
