@@ -27,6 +27,8 @@ app.post("/posts/:id/comments", (req, res) => {
   comments.push({ id: commentId, content: content });
   commentsByPostId[req.params.id] = comments;
 
+  console.log(comments);
+
   axios({
     url: "http://localhost:4005/events",
     method: "POST",
@@ -45,11 +47,11 @@ app.post("/posts/:id/comments", (req, res) => {
       console.log(err);
     });
 
-  res.status(201).send(comments);
+  res.status(201).send("OK");
 });
 
 app.post("/events", (req, res) => {
-  console.log("Received Event", req.body.event.type);
+  console.log("Received Event", req.body.type);
 
   res.send({});
 });
