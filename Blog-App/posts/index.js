@@ -6,7 +6,7 @@ const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 const posts = {};
@@ -42,7 +42,8 @@ app.post("/posts", (req, res) => {
 });
 
 app.post("/events", (req, res) => {
-  console.log("Event Received", req.body.event.type);
+  console.log(req.body);
+  console.log("Event Received", req.body.type);
   res.send({});
 });
 
