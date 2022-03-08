@@ -4,3 +4,9 @@ kubectl logs [pod_name]
 kubectl delete pod [pod_name]
 kubectl apply -f [config file name]
 kubectl describe pod [pod_name]
+
+------------- Version Control in Kubernetes-------------
+
+docker build -t [image_name] .
+docker push [image_name]
+kubectl rollout restart deployement [deployement_name]
