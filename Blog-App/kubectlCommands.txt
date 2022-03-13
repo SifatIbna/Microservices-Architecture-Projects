@@ -10,3 +10,10 @@ kubectl describe pod [pod_name]
 docker build -t [image_name] .
 docker push [image_name]
 kubectl rollout restart deployement [deployement_name]
+
+
+-------------- Service in Kubernetes---------------------
+
+kubectl apply -f [Service]
+kubectl get service  *For Getting all the running list of services*
+kubectl describe service [service_name]
