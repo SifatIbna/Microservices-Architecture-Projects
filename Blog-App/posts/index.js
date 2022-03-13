@@ -25,7 +25,7 @@ app.post("/posts", (req, res) => {
   console.log(posts[id]);
 
   axios({
-    url: "http://localhost:4005/events",
+    url: "http://event-bus-srv:4005/events",
     method: "post",
     data: {
       type: "postCreated",
