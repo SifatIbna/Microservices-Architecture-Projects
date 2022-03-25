@@ -30,7 +30,7 @@ app.post("/posts/:id/comments", (req, res) => {
   console.log(comments);
 
   axios({
-    url: "http://localhost:4005/events",
+    url: "http://event-bus-srv:4005/events",
     method: "POST",
 
     data: {
@@ -64,7 +64,7 @@ app.post("/events",async (req, res) => {
     });
 
     comment.status = status;
-    await axios.post("http://localhost:4005/events",{
+    await axios.post("http://event-bus-srv:4005/events",{
       type: "commentUpdated",
       data : {
         id,
