@@ -17,3 +17,10 @@ kubectl rollout restart deployement [deployement_name]
 kubectl apply -f [Service]
 kubectl get service  *For Getting all the running list of services*
 kubectl describe service [service_name]
+
+
+------------- deployement in Kubernetes------------------
+
+kubectl appy -f [deployement]
+kubectl get deployement
+kubectl describe service
