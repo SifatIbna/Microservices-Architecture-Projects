@@ -4,17 +4,17 @@ metadata:
   name: posts-depl
 spec:
   replicas: 1
-  selector:
+  selector:             # Selecting the pods that will be managed this deployment
     matchLabels:
       app: posts
-  template:
+  template:             # Creating the pods
     metadata:
       labels:
         app: posts
     spec:
       containers:
         - name: posts
-          image: sifatibnaamin/posts
+          image: sifatibnaamin/posts:0.0.1
 ---
 apiVersion: v1
 kind: Service

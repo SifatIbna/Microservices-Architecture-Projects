@@ -1,8 +1,10 @@
-apiVersion: v1
+apiVersion: v1                          # K8s- we can add in our own custom objects.this specifies the set of objects we want
+                                        # K8s to look at
 kind: Pod
 metadata:
   name: posts
 spec:
-  containers:
+  containers:                           # List of array containers. In this case we only have one container.
+                                        # thats why only one hypen
     - name: posts
-      image: sifatibnaamin/posts:0.0.1 
+      image: sifatibnaamin/posts:0.0.1
